@@ -51,5 +51,47 @@
 </div>
 
 <!-- Scripts de Bootstrap y Font Awesome -->
+
+<script>
+
+    // Función para obtener el nombre de usuario y otros detalles del usuario
+    async function obtenerDetallesUsuario() {
+        // Obtener detalles del usuario del almacenamiento local
+        const token = localStorage.getItem('token');
+        const idUsuario = localStorage.getItem('userId');
+
+        try {
+            // Realizar una solicitud AJAX para validar el token en el servidor
+            const response = await fetch('http://localhost:82/APIproyectofinal/api-rest/ValidarToken.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+
+            if (response.ok) {
+                // El servidor devuelve una respuesta JSON
+                const data = await response.json();
+                if (data.valid) {
+                    // El token es válido, puedes actualizar la interfaz de usuario con los detalles obtenidos
+                    document.getElementById('username').innerText = data.username;
+                    // Puedes añadir más actualizaciones según sea necesario
+                } else {
+                    // El token no es válido, probablemente porque ha expirado o es incorrecto
+                    // Redirige a la página de inicio de sesión u otra página de autenticación
+                    window.location.href = 'login.html';
+                }
+            } else {
+                console.error('Error al validar el token:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error al realizar la solicitud:', error);
+        }
+    }
+
+    // Llama a la función para obtener detalles del usuario cuando se carga la página
+    document.addEventListener('DOMContentLoaded', obtenerDetallesUsuario);
+</script>
 </body>
 </html>
