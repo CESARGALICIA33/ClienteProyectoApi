@@ -151,9 +151,8 @@ option{
 }
 
 .custom-form-group img {
-    height: 100px;
+    height: 80px;
     cursor: pointer;
-    border-width: 2px;
 }
 
 .custom-form-group input[type="radio"] {
@@ -164,22 +163,27 @@ option{
 .selected {
     background: rgba(46, 140, 255, 0.431);
     border-radius: 60px;
-    border: 2px solid transparent;
-}
 
-.custom-form-group img {
-    height: 100px;
-    cursor: pointer;
 }
 
 .custom-form-group img:hover {
     background: rgba(0, 157, 255, 0.723);
     border-radius: 60px;
-    border: 2px solid transparent;
+  
 }
 .custom-form-group textarea {
 border-color: #17a3b860;
 border-radius: 6px;
+
+}
+
+.custom-form-group label{
+font-size: 24px;
+}
+
+.container button {
+width: 120px;
+font-size: 20px;
 }
 /**/
 
@@ -192,8 +196,66 @@ footer {
     width: 100%;
     text-align: center;
     color: rgb(246, 246, 246);
-    background: rgba(0, 0, 0, 0.509);
+    background: rgba(0, 0, 0, 0.632);
     position: fixed;
   
   
   }
+
+  /*estilos de vistaEmpresa*/
+  .table-container {
+    margin: 20px;
+}
+
+.user-icon {
+    margin-right: 5px;
+}
+  /**/
+
+  /*estilos Vista Empresa*/
+
+  .message-container {
+    margin: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out infinite alternate; /* Animación del mensaje */
+}
+
+.user-icon {
+    margin-right: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    height: 90px; /* Ajusta la altura según tus necesidades */
+}
+
+.LogoIndex {
+    max-height: 100px;
+   /* Ajusta el tamaño máximo del logo */
+}
+
+.nav-item img{
+    width: 50px;
+    margin-right: 20px;
+   background-color: rgb(255, 255, 255);
+   border-radius: 40px;
+}
+
+.nav-item span{
+margin-right: 90px;
+color: #ffffff;
+}
+.row input{
+    font-size: 14px;
+    height: 50px;
+    border-color: #17A2B8;
+}
+/**/
