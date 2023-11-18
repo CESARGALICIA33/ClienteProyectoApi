@@ -59,16 +59,16 @@
         // Obtener detalles del usuario del almacenamiento local
         const token = localStorage.getItem('token');
         const idUsuario = localStorage.getItem('userId');
-
+        console.log(localStorage.getItem('token'));//borrar en la version final
+                console.log(localStorage.getItem('userId'));//borrar en la version final
         try {
-            // Realizar una solicitud AJAX para validar el token en el servidor
-            const response = await fetch('http://localhost:82/APIproyectofinal/api-rest/ValidarToken.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
-                },
-            });
+                const response = await fetch(`http://localhost:82/APIproyectofinal/api-rest/ValidarToken.php?token=${token}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
 
             if (response.ok) {
                 // El servidor devuelve una respuesta JSON
