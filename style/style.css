@@ -258,4 +258,15 @@ color: #ffffff;
     height: 50px;
     border-color: #17A2B8;
 }
+
+.col-md-3 input {
+    width: 20px;
+
+}
+
+.col-md-3 label {
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 20px;
+}
 /**/
