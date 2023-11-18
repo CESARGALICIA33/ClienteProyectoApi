@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function eliminarUsuarioEnAmbasAPIs(Iduser) {
         try {
             // Realizar solicitud a la primera API para eliminar el usuario
-            const responseApi1 = await fetch('http://localhost:82/APIproyectofinal/api-rest/EliminarCorreo.php/', {
+            const responseApi1 = await fetch('http://localhost:82/APIproyectofinal/api-rest/EliminarCorreo.php', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -26,20 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }),
             });
 
-            // Realizar solicitud a la segunda API para eliminar el usuario
-            const responseApi2 = await fetch('http://localhost:82/APIproyectofinal/api-rest/EliminarCandidato.php', {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    Iduser: Iduser,
-                }),
-            });
 
             // Verificar el resultado de ambas solicitudes
-            if (responseApi1.ok && responseApi2.ok) {
+            if (responseApi1.ok) {
                 console.log('Usuario eliminado correctamente en ambas APIs');
+                window.location.href = 'login.html'; // Cambiar a la URL correcta
             } else {
                 console.error('Error al eliminar el usuario en al menos una de las APIs');
             }
