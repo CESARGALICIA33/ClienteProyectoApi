@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Login</title>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <form action="">
+     <div class="loginbg" >
+        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 30rem; height: 40rem;">
+            <div class="d-flex justify-content-center">
+                <img src="/assets/login-icon.svg" alt="login-icon" style="height: 7rem" />
+            </div>
+            <div class="text-center fs-1 fw-bold" style="font-size: 40px;">Login</div>
+				<br>	
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info">
+                    <img src="/assets/username-icon.svg" alt="username-icon" style="height: 1rem;" />
+                </div>
+                <input class="form-control bg-light" type="text" placeholder="Correo"required style="  font-size: 20px;"/>
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-info">
+                    <img src="/assets/password-icon.svg" alt="password-icon" style="height: 1rem" />
+                </div>
+                <input class="form-control bg-light" type="password" id="passwordInput" placeholder="Contraseña" required style="  font-size: 20px;" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-info" type="button" onclick="togglePasswordVisibility()" style="  font-size: 20px;">Mostrar</button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-around mt-1">
+		<!-- Agregado: Menú desplegable para seleccionar el tipo de cuenta -->
+            <div class="input-group mt-4">
+                    <h4>Elije una opcion: </h4>
+                <select class="" id="accountType">
+                    <option value="1">Candidato</option>
+                    <option value="2">Empresa</option>
+                </select>
+            </div>
+
+            </div>
+            <button type="submit" class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" style="font-size: 20px;">
+   							 Login 
+						</button>
+
+            <div class="d-flex gap-1 justify-content-center mt-1">
+                <div><p style="font-size: 20px;">¿No tienes cuenta? </p></div>
+                <a href="registro.html" class="text-decoration-none text-info fw-semibold" style="font-size: 20px;">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</form>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('passwordInput');
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>

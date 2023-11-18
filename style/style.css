@@ -1,0 +1,199 @@
+body {
+    margin: 0;
+ background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+}
+.form-container {
+    background: white;
+    max-height: 100vh; /* Altura máxima del contenedor blanco */
+    overflow-y: auto; /* Agregar scroll vertical si es necesario */
+    padding: 60px; /* Añadir un espacio interior para mejorar la apariencia */
+    margin-bottom: 30px;
+}
+
+:root{
+  --colorPrimario: #17A2B8;  
+}
+.login-container {
+    margin-top: 3rem;
+    position: relative;
+    
+}
+
+
+.bg-white {
+    /* Ajusta el ancho de la tarjeta según tus necesidades */
+    width: 30rem; /* Ejemplo: ancho de 30rem */
+    margin: 0 auto;
+    margin-top: 3rem;
+     /* Centrar la tarjeta horizontalmente */
+}
+
+.loginbg::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.443);
+    z-index: -2;
+}
+/*Estilos del select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid  var(--colorPrimario); /* Agrega el color de borde deseado */
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 .4em;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    position: relative;
+    display: flex;
+    width: 10em;
+    height: 3em;
+    line-height: 3;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: .25em;
+    margin-left: 2rem;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--colorPrimario);
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    color: #000000;
+    border: 2px solid var(--colorPrimario); /* Reemplaza 'YourDesiredColor' con el color que desees */
+}
+
+option{
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/*Css form*/
+.form-container {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+/*accediendo a el div dentro del formulario*/
+.form-row.justify-content-center input {
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+.form-row.justify-content-center label{
+    font-size: 20px;
+}
+.form-row.justify-content-center textarea{
+    width: 270px;
+    height: 40px;
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+.form-row.justify-content-center select {
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+
+
+/*estilos de comentarios.html*/
+
+
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-radio {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-emoji {
+    vertical-align: middle;
+}
+
+.custom-form-group img {
+    height: 100px;
+    cursor: pointer;
+    border-width: 2px;
+}
+
+.custom-form-group input[type="radio"] {
+    display: none;
+    
+}
+/*select para mantener el color dentro de comentarios*/
+.selected {
+    background: rgba(46, 140, 255, 0.431);
+    border-radius: 60px;
+    border: 2px solid transparent;
+}
+
+.custom-form-group img {
+    height: 100px;
+    cursor: pointer;
+}
+
+.custom-form-group img:hover {
+    background: rgba(0, 157, 255, 0.723);
+    border-radius: 60px;
+    border: 2px solid transparent;
+}
+.custom-form-group textarea {
+border-color: #17a3b860;
+border-radius: 6px;
+}
+/**/
+
+/*footer */
+footer {
+ 
+    bottom: 0;
+    padding: 20px 0px;
+    border-top: 1px solid grey;
+    width: 100%;
+    text-align: center;
+    color: rgb(246, 246, 246);
+    background: rgba(0, 0, 0, 0.509);
+    position: fixed;
+  
+  
+  }

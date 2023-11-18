@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+   
+    <style>
+      
+    </style>
+    <title>Formulario de Eliminación de Cuenta</title>
+</head>
+<body>
+
+<div class="container"><br><br><br>
+    <h3>Estamos mejorando el sitio web, por favor responde el siguiente formulario:</h3>
+    <form id="comentariosForm">
+        <div class="custom-form-group">
+            <label>Experiencia:</label>
+            <div class="custom-radio">
+                <input type="radio" class="custom-radio-input" id="experienciaB" name="experiencia" value="B">
+                <label class="custom-radio-label" for="experienciaB">
+                    <img class="custom-emoji" src="img/bueno-emoji.svg" alt="Emoji B">
+                </label>
+            </div>
+            <div class="custom-radio">
+                <input type="radio" class="custom-radio-input" id="experienciaR" name="experiencia" value="R" >
+                <label class="custom-radio-label" for="experienciaR">
+                    <img class="custom-emoji" src="img/regular-emoji.svg" alt="Emoji R">
+                </label>
+            </div>
+            <div class="custom-radio">
+                <input type="radio" class="custom-radio-input" id="experienciaM" name="experiencia" value="M" >
+                <label class="custom-radio-label" for="experienciaM">
+                    <img class="custom-emoji" src="img/malo-emoji.svg">
+                </label>
+            </div>
+        </div>
+
+        <div class="custom-form-group">
+            <label for="motivos">Explica brevemente tus motivos por los cuales quieres eliminar tu cuenta:</label>
+            <textarea class="form-control" id="motivos" name="motivos" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2023 Equipo 1. Todos los derechos reservados.</p>
+</footer>
+<script src="js/comentarios-script.js"></script>
+<script src="js/iconos.js"></script>
+</body>
+</html>
