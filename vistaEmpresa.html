@@ -20,7 +20,7 @@
                 </span>
             </li>
             <li class="nav-item">
-                <button class="btn-primary"><a class="nav-link" href="#">Cerrar Sesión</a></button>
+                <button class="btn-primary"><a class="nav-link" href="login.html">Cerrar Sesión</a></button>
             </li>
         </ul>
     </div>
@@ -34,8 +34,11 @@
             <div class="input-group mt-3 input-group-sm">
                 <input id="barraBusqueda" type="text" class="form-control form-control-sm" placeholder="Buscar" aria-label="Buscar" >
                 <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="limpiarBusqueda()"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                      </svg>
+                    </button>
                     <button class="btn btn-outline-primary" type="button">Buscar</button>
-                    <button class="btn btn-outline-secondary" type="button" onclick="limpiarBusqueda()">Limpiar</button>
                 </div>
             </div>
         </div>
