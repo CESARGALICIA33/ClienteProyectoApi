@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         // Obtener datos del formulario
         const nombre = document.getElementById('nombre').value;
-        const apellidoPaterno = document.getElementById('apellido_paterno').value;
-        const apellidoMaterno = document.getElementById('apellido_materno').value;
+        const apellido_paterno = document.getElementById('apellido_paterno').value;
+        const apellido_materno = document.getElementById('apellido_materno').value;
         const genero = document.getElementById('genero').value;
         const telefono = document.getElementById('telefono').value;
         const calle = document.getElementById('calle').value;
         const colonia = document.getElementById('colonia').value;
-        const numInt = document.getElementById('num_int').value;
-        const numExt = document.getElementById('num_ext').value;
+        const num_int = document.getElementById('num_int').value;
+        const num_ext = document.getElementById('num_ext').value;
         const codigoPostal = document.getElementById('codigoPostal').value;
         const experiencia = document.getElementById('experiencia').value;
         const educacion = document.getElementById('educacion').value;
@@ -131,14 +131,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     const formData = new FormData();
                     formData.append('Iduser', Iduser);
                     formData.append('nombre', nombre);
-                    formData.append('apellido_paterno', apellidoPaterno);
-                    formData.append('apellido_materno', apellidoMaterno);
+                    formData.append('apellido_paterno', apellido_paterno);
+                    formData.append('apellido_materno', apellido_materno);
                     formData.append('genero', genero);
                     formData.append('telefono', telefono);
                     formData.append('calle', calle);
                     formData.append('colonia', colonia);
-                    formData.append('num_int', numInt);
-                    formData.append('num_ext', numExt);
+                    formData.append('num_int', num_int);
+                    formData.append('num_ext', num_ext);
                     formData.append('codigoPostal', codigoPostal);
                     formData.append('experiencia', experiencia);
                     formData.append('educacion', educacion);
@@ -153,12 +153,35 @@ document.addEventListener('DOMContentLoaded', function () {
                     for (const entry of formData.entries()) {
                         console.log(entry[0], entry[1]);
                     }
+                   /* const jsonData = {
+                        Iduser,
+                        nombre,
+                        apellido_paterno,
+                        apellido_materno,
+                        genero,
+                        telefono,
+                        calle,
+                        colonia,
+                        num_int,
+                        num_ext,
+                        codigoPostal,
+                        experiencia,
+                        educacion,
+                        habilidades,
+                        fecha_nacimiento,
+                        disponibilidad,
+                        salario,
+                        curriculum,
+                        constancia
+                    };
+                    console.log('Contenido de jsonData:', jsonData);*/
 
                     // Primera solicitud a la API de registro de candidato
                     const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidato.php', {
                         method: 'PUT',
                         body: formData,
                     });
+                    console.log('Respuesta del servidor (Candidato):', await responseCandidato.text());
 
                     if (responseCandidato.ok) {
                         const resultCandidato = await responseCandidato.json();
