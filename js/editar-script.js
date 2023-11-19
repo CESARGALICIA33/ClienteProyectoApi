@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const correo = document.getElementById('correo').value;
         const contrasena = document.getElementById('contrasena').value;
 
-        try {
+        
             // Segunda solicitud a la API de registro de usuario
             const responseUsuario = await fetch(`http://localhost:82/APIproyectofinal/api-rest/ActualizarUsuario.php?correo=${correo}&contrasena=${contrasena}&Iduser=${Iduser}`, {
                 method: 'PUT',
@@ -121,8 +121,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (responseUsuario.ok) {
                 const resultUsuario = await responseUsuario.json();
                 console.log('Respuesta del servidor (Usuario):', resultUsuario);
+            } else {
+                console.error('Error: No se recibió un userId válido en la respuesta del servidor (Usuario)');
+                alert('Error en el registro de usuario');
+            }
 
-
+                    
                     // Crear un objeto FormData y agregar datos y archivos
                     const formData = new FormData();
                     formData.append('Iduser', Iduser);
@@ -145,6 +149,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     formData.append('curriculum', curriculumFile);
                     formData.append('constancia', constanciaFile);
 
+                    console.log('Contenido de formData:');
+                    for (const entry of formData.entries()) {
+                        console.log(entry[0], entry[1]);
+                    }
+
                     // Primera solicitud a la API de registro de candidato
                     const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidato.php', {
                         method: 'PUT',
@@ -157,22 +166,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Puedes realizar acciones adicionales aquí según la respuesta de ambas APIs
                         alert('Registro exitoso');
-                        window.location.href = 'Index.html'; // Cambiar a la URL correcta
+                        //window.location.href = 'Index.html'; // Cambiar a la URL correcta
 
                     } else {
                         console.error('Error en la solicitud (Candidato):', responseCandidato.statusText);
                         alert('Error en el registro de candidato');
                     }
-                } else {
-                    console.error('Error: No se recibió un userId válido en la respuesta del servidor (Usuario)');
-                    alert('Error en el registro de usuario');
-                }
-
-        } catch (error) {
-            console.error('Error Documentos mayores a 1 MB:', error);
             
-            alert('Error de red');
-        }
+
     };
 
     // Agregar el evento de envío al formulario
