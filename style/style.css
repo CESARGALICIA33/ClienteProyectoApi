@@ -273,4 +273,9 @@ color: #ffffff;
 .col-md-3 button{
 margin-right: 10px;
 }
+
+.col-md-9 {
+    max-height: 400px; /* Ajusta según sea necesario */
+    overflow-y: auto;
+}
 /**/
