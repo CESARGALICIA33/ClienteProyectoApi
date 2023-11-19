@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <title>Registro</title>
 </head>
 <body class="align-items-center vh-100 " style="background-image: url(img/Fondologin.jpg);">
@@ -84,12 +85,17 @@
                             <label for="">Habilidades</label>
                             <textarea name="" id="habilidades"  cols="30" rows="10"></textarea>                      
                         </div>
-
+                        
                         <div class="form-group col-md-5">
                             <label for="">Fecha de nacimiento</label>
                             <input type="date" name="" id="fecha_nacimiento">
                         </div>
+                          <!-- Agregar el label de tamaño máximo -->
+                          <div class="form-group col-md-13">
+                            <label for="" style="color: rgb(255, 0, 0);">Considera que ambos archivos no excedan 1MB</label>
+                        </div>
 
+                        <!-- inputs tipo file  -->
                         <div class="form-group col-md-5">
                             <label for="">Curriculum</label>
                             <input type="file" name="" id="curriculum">
@@ -99,8 +105,9 @@
                             <label for="">Constancia</label>
                             <input type="file" name="" id="constancia">
                         </div>
-                        <!-- Agrega otras secciones del formulario aquí -->
+                        <!-- fin de tipo file -->
 
+                      
                         <div class="form-group col-md-5">
                             <label for="">Disponibilidad</label>
                             <select class="form-control" id="disponibilidad" name="Disponibilidad" required>    
@@ -125,14 +132,17 @@
                             <div class="input-group">
                                 <input type="password" class="form-control" id="contrasena" required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-info" type="button" onclick="togglePasswordVisibility()" style="font-size: 20px;">Mostrar</button>
+                                    <button class="btn btn-outline-info" type="button" onclick="togglePasswordVisibility()" style="font-size: 15px; width: 70px;">Mostrar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary" style="background: #17A2B8; width: 200px;">Enviar</button>
-                    </div>             
+                        <a href="login.html" class="btn btn-danger" style="width: 150px; margin-right: 30px;">Cancelar</a>
+                        <button type="submit" class="btn btn-primary" style="background: #17A2B8; width: 150px;">Enviar</button>
+                    </div>
+                    
+                                
                  </form>
             </div>
         </div>
