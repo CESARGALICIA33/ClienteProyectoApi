@@ -39,9 +39,9 @@ async function submitForm(event) {
 
                     // Agregar condición para redirigir según el tipo de cuenta
                     if (accountType === '1') {
-                        window.location.href = 'pagina1.html'; // Cambiar a la URL correcta
+                        window.location.href = 'Index.html'; // Cambiar a la URL correcta
                     } else if (accountType === '2') {
-                        window.location.href = 'pagina2.html'; // Cambiar a la URL correcta
+                        window.location.href = 'vistaEmpresa.html'; // Cambiar a la URL correcta
                     }
                
             } else {
