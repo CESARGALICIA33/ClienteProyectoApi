@@ -6,7 +6,6 @@
     <title>Bienvenido Empresa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/style.css">
-
 </head>
 <body>
 
@@ -33,9 +32,10 @@
         <div class="col-md-3">
             <!-- Barra de búsqueda -->
             <div class="input-group mt-3 input-group-sm">
-                <input type="text" class="form-control form-control-sm" placeholder="Buscar" aria-label="Buscar" >
+                <input id="barraBusqueda" type="text" class="form-control form-control-sm" placeholder="Buscar" aria-label="Buscar" >
                 <div class="input-group-append">
                     <button class="btn btn-outline-primary" type="button">Buscar</button>
+                    <button class="btn btn-outline-secondary" type="button" onclick="limpiarBusqueda()">Limpiar</button>
                 </div>
             </div>
         </div>
@@ -113,8 +113,10 @@
         </div>
     </div>
 </div>
+<script src="js/limpiar.js"></script>
 <footer>
     <p>&copy; 2023 Equipo 1. Todos los derechos reservados.</p>
 </footer>
+
 </body>
 </html>
