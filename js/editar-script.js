@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const experiencia = document.getElementById('experiencia').value;
         const educacion = document.getElementById('educacion').value;
         const habilidades = document.getElementById('habilidades').value;
-        const fechaNacimiento = document.getElementById('fecha_nacimiento').value;
+        const fecha_nacimiento = document.getElementById('fecha_nacimiento').value;
         const disponibilidad = document.getElementById('disponibilidad').value;
         const salario = document.getElementById('salario').value;
         // Obtener archivos
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     
                     // Crear un objeto FormData y agregar datos y archivos
-                    const formData = new FormData();
+                   /* const formData = new FormData();
                     formData.append('Iduser', Iduser);
                     formData.append('nombre', nombre);
                     formData.append('apellido_paterno', apellido_paterno);
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     formData.append('habilidades', habilidades);
                     formData.append('fecha_nacimiento', fechaNacimiento);
                     formData.append('disponibilidad', disponibilidad);
-                    formData.append('salario', salario);
+                    formData.append('salario', salario);*/
                     //formData.append('curriculum', curriculumFile);
                    // formData.append('constancia', constanciaFile);
 
@@ -153,7 +153,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Primera solicitud a la API de registro de candidato
                     const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidatoSin.php', {
                         method: 'PUT',
-                        body: formData,
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            nombre,
+                            Iduser,
+                            apellido_paterno,
+                            apellido_materno,
+                            genero,
+                            telefono,
+                            calle,
+                            colonia,
+                            num_int,
+                            num_ext,
+                            codigoPostal,
+                            experiencia,
+                            educacion,
+                            habilidades,
+                            fecha_nacimiento,
+                            disponibilidad,
+                            salario
+                        }),
                     });
 
                     try {
