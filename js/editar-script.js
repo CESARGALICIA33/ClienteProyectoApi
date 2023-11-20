@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Respuesta de la API:', data);
+            //console.log('Respuesta de la API:', data);
 
             // Llenar el formulario con los datos del candidato
             document.getElementById('nombre').value = data.Nombre;
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Respuesta del API de correo/contraseña:', data);
+            //console.log('Respuesta del API de correo/contraseña:', data);
 
             // Llenar el formulario con los datos del correo/contraseña
             document.getElementById('correo').value = data.Correo;
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const disponibilidad = document.getElementById('disponibilidad').value;
         const salario = document.getElementById('salario').value;
         // Obtener archivos
-        const curriculumFile = document.getElementById('curriculum').files[0];
-        const constanciaFile = document.getElementById('constancia').files[0];
+        //const curriculumFile = document.getElementById('curriculum').files[0];
+        //const constanciaFile = document.getElementById('constancia').files[0];
 
         // Obtener datos del usuario
         const correo = document.getElementById('correo').value;
@@ -146,59 +146,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     formData.append('fecha_nacimiento', fechaNacimiento);
                     formData.append('disponibilidad', disponibilidad);
                     formData.append('salario', salario);
-                    formData.append('curriculum', curriculumFile);
-                    formData.append('constancia', constanciaFile);
+                    //formData.append('curriculum', curriculumFile);
+                   // formData.append('constancia', constanciaFile);
 
-                    console.log('Contenido de formData:');
-                    for (const entry of formData.entries()) {
-                        console.log(entry[0], entry[1]);
-                    }
-                   /* const jsonData = {
-                        Iduser,
-                        nombre,
-                        apellido_paterno,
-                        apellido_materno,
-                        genero,
-                        telefono,
-                        calle,
-                        colonia,
-                        num_int,
-                        num_ext,
-                        codigoPostal,
-                        experiencia,
-                        educacion,
-                        habilidades,
-                        fecha_nacimiento,
-                        disponibilidad,
-                        salario,
-                        curriculum,
-                        constancia
-                    };
-                    console.log('Contenido de jsonData:', jsonData);*/
-
+                  
                     // Primera solicitud a la API de registro de candidato
-                    const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidato.php', {
+                    const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidatoSin.php', {
                         method: 'PUT',
                         body: formData,
                     });
-                    console.log('Respuesta del servidor (Candidato):', await responseCandidato.text());
 
-                    if (responseCandidato.ok) {
+                    try {
                         const resultCandidato = await responseCandidato.json();
-                        console.log('Respuesta del servidor (Candidato):', resultCandidato);//eliminar en la version final
+                        console.log('Respuesta del servidor (Candidato):', resultCandidato);
 
                         // Puedes realizar acciones adicionales aquí según la respuesta de ambas APIs
                         alert('Registro exitoso');
-                        //window.location.href = 'Index.html'; // Cambiar a la URL correcta
-
-                    } else {
-                        console.error('Error en la solicitud (Candidato):', responseCandidato.statusText);
+                        // window.location.href = 'Index.html'; // Cambiar a la URL correcta
+                    } catch (error) {
+                        console.error('Error al intentar parsear la respuesta como JSON:', error);
                         alert('Error en el registro de candidato');
                     }
+
             
 
     };
-
-    // Agregar el evento de envío al formulario
     form.addEventListener('submit', submitForm);
+
 });
