@@ -33,7 +33,20 @@ function actualizarTabla(datos) {
         var fila = `<tr>
                         <th scope="row">${datos.IdCandidato}</th>
                         <td>${datos.Nombre}</td>
+                        <td>${datos.ApellidoPaterno}</td>
+                        <td>${datos.ApellidoMaterno}</td>
                         <td>${datos.Teléfono}</td>
+                        <td>${datos.Calle}</td>
+                        <td>${datos.Colonia}</td>
+                        <td>${datos.NumInt}</td>
+                        <td>${datos.NumExt}</td>
+                        <td>${datos.CódigoPostal}</td>
+                        <td>${datos.ExperienciaLaboral}</td>
+                        <td>${datos.Educación}</td>
+                        <td>${datos.Habilidades}</td>
+                        <td>${datos.FechaNacimiento}</td>
+                        <td>${datos.Disponibilidad}</td>
+                        <td>${datos.Salario}</td>
                         <!-- Agrega más columnas según tus necesidades -->
                     </tr>`;
         tabla.innerHTML += fila;
