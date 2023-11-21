@@ -1,0 +1,52 @@
+// Guarda este contenido en un archivo llamado script.js
+
+// Función para realizar la búsqueda y actualizar la tabla
+function buscar() {
+    // Obtén el valor de la barra de búsqueda
+    var nombre = document.getElementById("barraBusqueda").value;
+
+    // Realiza la solicitud a la API con el nombre como parámetro
+    fetch(`http://localhost:82/APIproyectofinal/api-rest/VisualizarCandidato.php?nombre=${nombre}`, {
+        method: 'GET'
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Llama a la función para actualizar la tabla con los datos recibidos
+            actualizarTabla(data);
+        })
+        .catch(error => {
+            console.error('Error al obtener datos de la API:', error);
+        });
+}
+
+// Función para actualizar la tabla con los datos obtenidos de la API
+function actualizarTabla(datos) {
+    // Obtén la referencia a la tabla y su cuerpo
+    var tabla = document.querySelector("table tbody");
+
+    // Limpia el contenido actual de la tabla
+    tabla.innerHTML = "";
+
+    // Verifica que datos sea un objeto
+    if (typeof datos === 'object' && datos !== null) {
+        // Agrega una fila a la tabla con los datos del objeto
+        var fila = `<tr>
+                        <th scope="row">${datos.IdCandidato}</th>
+                        <td>${datos.Nombre}</td>
+                        <td>${datos.Teléfono}</td>
+                        <!-- Agrega más columnas según tus necesidades -->
+                    </tr>`;
+        tabla.innerHTML += fila;
+    } else {
+        console.error('El formato de datos no es válido:', datos);
+    }
+}
+
+
+// Función para limpiar la búsqueda
+function limpiarBusqueda() {
+    document.getElementById("barraBusqueda").value = "";
+}
+
+// Asigna la función de búsqueda al botón correspondiente
+document.querySelector(".input-group-append button.btn-outline-primary").addEventListener("click", buscar);

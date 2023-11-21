@@ -121,9 +121,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (responseUsuario.ok) {
                 const resultUsuario = await responseUsuario.json();
                 console.log('Respuesta del servidor (Usuario):', resultUsuario);
+                window.location.href = 'Index.html'; // Cambiar a la URL correcta
+
             } else {
-                console.error('Error: No se recibió un userId válido en la respuesta del servidor (Usuario)');
-                alert('Error en el registro de usuario');
+                /*console.error('Error: No se recibió un userId válido en la respuesta del servidor (Usuario)');
+                alert('Error en el registro de usuario');*/
+                window.location.href = 'Index.html'; // Cambiar a la URL correcta
+
             }
 
                     
@@ -183,10 +187,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Puedes realizar acciones adicionales aquí según la respuesta de ambas APIs
                         alert('Registro exitoso');
-                        // window.location.href = 'Index.html'; // Cambiar a la URL correcta
+                        window.location.href = 'Index.html'; // Cambiar a la URL correcta
                     } catch (error) {
-                        console.error('Error al intentar parsear la respuesta como JSON:', error);
-                        alert('Error en el registro de candidato');
+                        /*console.error('Error al intentar parsear la respuesta como JSON:', error);
+                        alert('Error en el registro de candidato');*/
+                        window.location.href = 'Index.html'; // Cambiar a la URL correcta
+
                     }
 
             
