@@ -18,7 +18,7 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <span class="navbar-text">
-                   <img src="img/login-icon.svg" alt=""><label class="">Bienvenid@:</label>
+                   <img src="img/login-icon.svg" alt=""><label class="">Bienvenid@</label>
                 </span>
             </li>
             <li class="nav-item">
@@ -71,53 +71,71 @@
 
         <!-- Columnas de filtros a la derecha -->
         <div class="col-md-3">
-            <label class="form-check-label" for="defaultCheck1"><h4>Filtros:</h4></label>
+            <div class="mb-3">
+                <h4>Filtros</h4>
+            </div>
+        
             <!-- Filtros 1 -->
-            <div class="form-check">
+            <div class="form-check mb-1" >
+                <h6 style="font-weight: bold;">Género:</h6>
+                <div class="FiltrosChecks">
                 <input class="form-check-input" type="checkbox" value="" id="M">
                 <label class="form-check-label" for="defaultCheck1">
                     Masculino
                 </label>
             </div>
-            <div class="form-check">
+        </div>
+            <div class="form-check mb-2">
+                <div class="FiltrosChecks">
                 <input class="form-check-input" type="checkbox" value="" id="F">
                 <label class="form-check-label" for="defaultCheck2">
                     Femenino
                 </label>
             </div>
-            <!-- Agrega más filtros según tus necesidades -->
-
+        </div>
+        
             <!-- Filtros 2 -->
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                <label class="form-check-label" for="defaultCheck3">
-                   Turno completo
+            <div class="form-check mb-1">
+                <h6 style="font-weight: bold;">Disponibilidad:</h6>
+                <div class="FiltrosChecks">
+                <input class="form-check-input" type="checkbox" value="" id="M">
+                <label class="form-check-label" for="defaultCheck1">
+                    Medio tiempo
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-                <label class="form-check-label" for="defaultCheck4">
-                   Medio tiempo
+        </div>
+        
+            <div class="form-check mb-2">
+                <div class="FiltrosChecks">
+                <input class="form-check-input" type="checkbox" value="" id="F">
+                <label class="form-check-label" for="defaultCheck2">
+                    Tiempo completo
                 </label>
             </div>
-            <!-- Agrega más filtros según tus necesidades -->
-
+            </div>
+        
             <!-- Filtros 3 -->
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-                <label class="form-check-label" for="defaultCheck5">
+            <div class="form-check mb-1">
+                <h6 style="font-weight: bold;">Salario:</h6>
+                <div class="FiltrosChecks">
+                <input class="form-check-input" type="checkbox" value="" id="M" >
+                <label class="form-check-label" for="defaultCheck1">
                     Salario mayor a $10,000
-                   
                 </label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-                <label class="form-check-label" for="defaultCheck6">
+         </div>
+        
+            <div class="form-check mb-2">
+                <div class="FiltrosChecks">
+                <input class="form-check-input" type="checkbox" value="" id="F">
+                <label class="form-check-label" for="defaultCheck2">
                     Salario menor a $10,000
                 </label>
             </div>
+         </div>
             <!-- Agrega más filtros según tus necesidades -->
         </div>
+        
     </div>
 </div>
 <script src="js/limpiar.js"></script>
