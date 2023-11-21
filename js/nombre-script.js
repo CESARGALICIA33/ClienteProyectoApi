@@ -59,6 +59,8 @@ function actualizarTabla(datos) {
 // Función para limpiar la búsqueda
 function limpiarBusqueda() {
     document.getElementById("barraBusqueda").value = "";
+    // Recargar la tabla llamando a la función para obtener y mostrar los datos
+    obtenerDatosYActualizarTabla();
 }
 
 // Asigna la función de búsqueda al botón correspondiente

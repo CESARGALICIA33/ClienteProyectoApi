@@ -16,7 +16,7 @@ function obtenerDatosYActualizarTabla() {
         .then(response => response.json())
         .then(data => {
             // Llama a la función para actualizar la tabla con los datos recibidos
-            actualizarTabla(data);
+            actualizarTablaDatos(data);
         })
         .catch(error => {
             console.error('Error al obtener datos de la API:', error);
@@ -24,7 +24,7 @@ function obtenerDatosYActualizarTabla() {
 }
 
 // Función para actualizar la tabla con los datos obtenidos de la API
-function actualizarTabla(datos) {
+function actualizarTablaDatos(datos) {
     // Obtén la referencia a la tabla y su cuerpo
     var tabla = document.querySelector("table tbody");
 
