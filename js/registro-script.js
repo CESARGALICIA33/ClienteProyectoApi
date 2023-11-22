@@ -72,9 +72,17 @@ async function submitForm(event) {
                     const resultCandidato = await responseCandidato.json();
                     console.log('Respuesta del servidor (Candidato):', resultCandidato);//eliminar en la version final
 
-                    // Puedes realizar acciones adicionales aquí según la respuesta de ambas APIs
-                    alert('Registro exitoso');
-                    window.location.href = 'Login.html'; // Cambiar a la URL correcta
+                    Swal.fire({
+                        title: '¡Registro exitoso!',
+                        text: 'Serás redirigido a la página de inicio de sesión.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'login.html'; 
+                        }
+                    });
+                    
 
                 } else {
                     console.error('Error en la solicitud (Candidato):', responseCandidato.statusText);

@@ -1,4 +1,3 @@
-// visualizar_datos.js
 
 // Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Función para realizar una solicitud GET a la API y actualizar la tabla
 function obtenerDatosYActualizarTabla() {
-    // URL de tu API (reemplázala con la URL correcta)
+    // URL de la api que retorna los datos para llenar la tabla al recargarla
     var apiUrl = "http://localhost:82/APIproyectofinal/api-rest/Visualizar.php";
 
     // Realiza la solicitud GET a la API

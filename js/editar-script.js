@@ -3,18 +3,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Obtener el ID del usuario almacenado en localStorage
     const Iduser = localStorage.getItem('userId');
-    console.log(localStorage.getItem('userId'));//borrar en la version final
+    
     // Llamada a la API para obtener datos del candidato
-    fetch(`http://localhost:82/APIproyectofinal/api-rest/MostrarCandidato.php?Iduser=${Iduser}`, {
+    fetch(`http://localhost:82/APIproyectofinal/api-rest/MostrarCandidato.php?Iduser=${Iduser}`, {// manda el id usuarios para que este realice la consulta
     method: 'GET',
     headers: {
         'Content-Type': 'application/json',
-        // Puedes agregar otros encabezados según sea necesario
+        // encabezado de la solicitud
     },
     })
         .then(response => response.json())
         .then(data => {
-            //console.log('Respuesta de la API:', data);
 
             // Llenar el formulario con los datos del candidato
             document.getElementById('nombre').value = data.Nombre;
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('educacion').value = data.Educación;
             document.getElementById('habilidades').value = data.Habilidades;
             document.getElementById('salario').value = data.Salario;
-            //document.getElementById('disponibilidad').value = data.Disponibilidad;
             const disponibilidadSelect = document.getElementById('disponibilidad');
             disponibilidadSelect.innerHTML = ''; // Limpiar opciones existentes
         
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const opcionesDisponibilidad = [
                 { value: 'M', text: 'Medio turno' },
                 { value: 'T', text: 'Turno completo' }
-                // Agrega más opciones según sea necesario
             ];
         
             opcionesDisponibilidad.forEach(opcion => {
@@ -75,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            //console.log('Respuesta del API de correo/contraseña:', data);
 
             // Llenar el formulario con los datos del correo/contraseña
             document.getElementById('correo').value = data.Correo;
@@ -103,10 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const habilidades = document.getElementById('habilidades').value;
         const fecha_nacimiento = document.getElementById('fecha_nacimiento').value;
         const disponibilidad = document.getElementById('disponibilidad').value;
-        const salario = document.getElementById('salario').value;
-        // Obtener archivos
-        //const curriculumFile = document.getElementById('curriculum').files[0];
-        //const constanciaFile = document.getElementById('constancia').files[0];
+        const salario = document.getElementById('salario').value;       
 
         // Obtener datos del usuario
         const correo = document.getElementById('correo').value;
@@ -114,45 +107,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
             // Segunda solicitud a la API de registro de usuario
-            const responseUsuario = await fetch(`http://localhost:82/APIproyectofinal/api-rest/ActualizarUsuario.php?correo=${correo}&contrasena=${contrasena}&Iduser=${Iduser}`, {
+            const responseUsuario = await fetch(`http://localhost:82/APIproyectofinal/api-rest/ActualizarUsuario.php?correo=${correo}&contrasena=${contrasena}&Iduser=${Iduser}`, {// esta api envia lo datos para que realice el update en la tabla Usuario
                 method: 'PUT',
             });
 
             if (responseUsuario.ok) {
                 const resultUsuario = await responseUsuario.json();
                 console.log('Respuesta del servidor (Usuario):', resultUsuario);
-                window.location.href = 'Index.html'; // Cambiar a la URL correcta
+                window.location.href = 'Index.html'; // direcciona al index en caso de una actualizacion en la cuenta del candidato
 
             } else {
-                /*console.error('Error: No se recibió un userId válido en la respuesta del servidor (Usuario)');
-                alert('Error en el registro de usuario');*/
-                window.location.href = 'Index.html'; // Cambiar a la URL correcta
+                
+                window.location.href = 'Index.html';//redirecciona a index en caso de que no haya algun cambio en el correo y contraseña
 
             }
 
-                    
-                    // Crear un objeto FormData y agregar datos y archivos
-                   /* const formData = new FormData();
-                    formData.append('Iduser', Iduser);
-                    formData.append('nombre', nombre);
-                    formData.append('apellido_paterno', apellido_paterno);
-                    formData.append('apellido_materno', apellido_materno);
-                    formData.append('genero', genero);
-                    formData.append('telefono', telefono);
-                    formData.append('calle', calle);
-                    formData.append('colonia', colonia);
-                    formData.append('num_int', num_int);
-                    formData.append('num_ext', num_ext);
-                    formData.append('codigoPostal', codigoPostal);
-                    formData.append('experiencia', experiencia);
-                    formData.append('educacion', educacion);
-                    formData.append('habilidades', habilidades);
-                    formData.append('fecha_nacimiento', fechaNacimiento);
-                    formData.append('disponibilidad', disponibilidad);
-                    formData.append('salario', salario);*/
-                    //formData.append('curriculum', curriculumFile);
-                   // formData.append('constancia', constanciaFile);
-
+            
                   
                     // Primera solicitud a la API de registro de candidato
                     const responseCandidato = await fetch('http://localhost:82/APIproyectofinal/api-rest/ActualizarCandidatoSin.php', {
@@ -160,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({
+                        body: JSON.stringify({// envia lo datos para realizar el update del candidato
                             nombre,
                             Iduser,
                             apellido_paterno,

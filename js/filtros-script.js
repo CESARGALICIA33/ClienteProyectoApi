@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Agregar eventos de clic a las etiquetas
     var tabla = document.querySelector("table tbody");
-
+    //se obtienen elementos con los ids correspondientes
     var generoMasculino = document.getElementById("MASCULINO");
     var generoFemenino = document.getElementById("FEMENINO");
     var disponibilidadMedio = document.getElementById("MEDIO");
@@ -25,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (generoFemenino) {
         generoFemenino.addEventListener("click", function () {
             if (generoFemenino.checked) {
-                // Si el checkbox está marcado, filtra por género masculino
+                // Si el checkbox está marcado, filtra por género Femenino
                 llamarAPI('http://localhost:82/APIproyectofinal/api-rest/VisualizarGeneroF.php');
             } else {
                 // Si el checkbox está desmarcado, muestra todos los datos
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (disponibilidadMedio) {
         disponibilidadMedio.addEventListener("click", function () {
             if (disponibilidadMedio.checked) {
-                // Si el checkbox está marcado, filtra por género masculino
+                // Si el checkbox está marcado, filtra por disponibilidad
                 llamarAPI('http://localhost:82/APIproyectofinal/api-rest/VisualizarDisponibilidadM.php');
             } else {
                 // Si el checkbox está desmarcado, muestra todos los datos
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (disponibilidadCompleto) {
         disponibilidadCompleto.addEventListener("click", function () {
             if (disponibilidadCompleto.checked) {
-                // Si el checkbox está marcado, filtra por género masculino
+                // Si el checkbox está marcado, filtra por disponibilidad
                 llamarAPI('http://localhost:82/APIproyectofinal/api-rest/VisualizarDisponibilidadC.php');
             } else {
                 // Si el checkbox está desmarcado, muestra todos los datos
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (salarioMayor) {
         salarioMayor.addEventListener("click", function () {
             if (salarioMayor.checked) {
-                // Si el checkbox está marcado, filtra por género masculino
+                // Si el checkbox está marcado, filtra por salario
                 llamarAPI('http://localhost:82/APIproyectofinal/api-rest/VisualizarSalarioMayor.php');
             } else {
                 // Si el checkbox está desmarcado, muestra todos los datos
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (salarioMenor) {
         salarioMenor.addEventListener("click", function () {
             if (salarioMenor.checked) {
-                // Si el checkbox está marcado, filtra por género masculino
+                // Si el checkbox está marcado, filtra por salario
                 llamarAPI('http://localhost:82/APIproyectofinal/api-rest/VisualizarSalarioMenor.php');
             } else {
                 // Si el checkbox está desmarcado, muestra todos los datos
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function llamarAPI(apiUrl) {
+    function llamarAPI(apiUrl) {// funcion que recibe el link del api que fue seleccionado para realizar la peticion
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    function actualizarTabla(data) {
+    function actualizarTabla(data) {// funcion que recibe los datos de la api para mostrarlos en la tabla
         tabla.innerHTML = "";
 
         // Lógica para actualizar la tabla con los datos recibidos

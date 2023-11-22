@@ -1,4 +1,3 @@
-// Guarda este contenido en un archivo llamado script.js
 
 // Función para realizar la búsqueda y actualizar la tabla
 function buscar() {

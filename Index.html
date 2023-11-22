@@ -56,20 +56,20 @@
 <!-- Scripts de Bootstrap y Font Awesome -->
 <script src="js/eliminar-script.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', async function () {// script que manda los datos del token a la funcion que valida el token generado en el login
     // Obtén el token almacenado localmente
     const token = localStorage.getItem('token');
     console.log(localStorage.getItem('token'));//borrar en la version final
 
     // Realiza una solicitud AJAX para validar el token en el servidor
     try {
-        const response = await fetch('http://localhost:82/APIproyectofinal/api-rest/ValidarToken.php', {
+        const response = await fetch('http://localhost:82/APIproyectofinal/api-rest/ValidarToken.php', {// Api que devuelve true en caso de que el token exista y cuente con las condiciones de evaluacion (tiempo de expiracion)
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                token: token,
+                token: token,//envio del token por medio de json
             }),
         });
 
