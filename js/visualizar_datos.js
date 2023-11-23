@@ -39,6 +39,7 @@ function actualizarTablaDatos(datos) {
                             <td>${elemento.Nombre}</td>
                             <td>${elemento.ApellidoPaterno}</td>
                             <td>${elemento.ApellidoMaterno}</td>
+                            <td>${elemento.Género}</td>
                             <td>${elemento.Teléfono}</td>
                             <td>${elemento.Calle}</td>
                             <td>${elemento.Colonia}</td>
@@ -51,7 +52,6 @@ function actualizarTablaDatos(datos) {
                             <td>${elemento.FechaNacimiento}</td>
                             <td>${elemento.Disponibilidad}</td>
                             <td>${elemento.Salario}</td>
-                            <!-- Agrega más columnas según tus necesidades -->
                         </tr>`;
             tabla.innerHTML += fila;
         });

@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <td>${elemento.Nombre}</td>
                             <td>${elemento.ApellidoPaterno}</td>
                             <td>${elemento.ApellidoMaterno}</td>
+                            <td>${elemento.Género}</td>
                             <td>${elemento.Teléfono}</td>
                             <td>${elemento.Calle}</td>
                             <td>${elemento.Colonia}</td>

@@ -34,6 +34,7 @@ function actualizarTabla(datos) {
                         <td>${datos.Nombre}</td>
                         <td>${datos.ApellidoPaterno}</td>
                         <td>${datos.ApellidoMaterno}</td>
+                        <td>${datos.Género}</td>
                         <td>${datos.Teléfono}</td>
                         <td>${datos.Calle}</td>
                         <td>${datos.Colonia}</td>
